@@ -1,0 +1,32 @@
+class Question:
+
+  def __init__(self, prompt, answer):
+    self.prompt = prompt
+    self.answer = answer
+
+question_prompt = [
+
+           "1.What color are apples? \n(a)Red \n(b)Pink \n(c)Purple  \n(d)Orange \n\n",
+           "2.What color are bananas? \n(a)Teal \n(b)Magenta \n(c)Orange  \n(d)Yellow \n\n",
+           "3.What color are blueberries? \n(a)Red \n(b)Pink \n(c)Blue  \n(d)Orange \n\n",
+
+]
+
+questions = [
+
+             Question(question_prompt[0], "a"),
+             Question(question_prompt[1], "d"),
+             Question(question_prompt[2], "c"),
+
+]
+
+def run_test(questions):
+  score = 0
+
+  for question in questions:
+    answer = input(question.prompt)
+    if answer == question.answer:
+      score += 1
+  print("You scored " + str(score) + "/" +str(len(questions)))
+
+run_test(questions)
